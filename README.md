@@ -11,9 +11,9 @@
 ### Directions for use:
 1. Create a new folder
 2. Run "npm init" in the newly created folder
-3. In the terminal run command "npm i node-bare"
+3. In the terminal run command "npm i node-bare-skeleton"
 4. Go to your "package.json" in your new app and
-in your "scripts" object  add "scaffold": "node-bare"
+in your "scripts" object  add "scaffold": "node-bare-skeleton"
 5. Run "npm run scaffold" in your termina
 6. Watch the magic happen
 
