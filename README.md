@@ -19,3 +19,6 @@ in your "scripts" object  add "scaffold": "node-bare-skeleton"
 
 ### Built using:
 Node.js and the FileSystem package
+
+### GitHub Link
+[node-bare-skeleton](https://github.com/oghusky/node-bare-skeleton)
