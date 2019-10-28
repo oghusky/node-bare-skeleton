@@ -1,4 +1,4 @@
-## APP-SCAFFOLD
+## Node-Bare-Skeleton
 -This package creates a basic backend-scaffolding
 -It creates the following folders:
 --- controllers
