@@ -7,6 +7,7 @@ mkdirFolder("models",scaffoldFolder);
 mkdirFolder("controllers",scaffoldFolder);
 mkdirFolder("routes",scaffoldFolder);
 mkdirFolder("middleware",scaffoldFolder);
+mkdirFolder("public", scaffoldFolder);
 // make gitignore file
 makeGitIgnore();
 // make readme file
