@@ -13,5 +13,3 @@ makeGitIgnore();
 makeReadMe();
 // creates server file in root folder
 createServerFile();
-// console log how to use package
-console.log('Directions for use:\n1. Go to your "package.json" and \nin your "scripts" object  add \n"scaffold": "bare-node" \n2. Run "npm run scaffold" in your termina\n3. Watch the magic happen');

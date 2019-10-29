@@ -17,7 +17,7 @@ exports.makeGitIgnore = ()=>{
 
 exports.createServerFile = ()=>{
   // writes server js file to root folder
-  fs.writeFile("index.js","", (err)=>{
+  fs.writeFile("index.js","require('dotenv').config();\nconst express = require('express');\nconst app = express();app.use(express.urlencoded({extended: true}));\napp.use(express.json());\napp.use(express.static(path.join(__dirname, 'public')));\nconst PORT = process.env.PORT || PORT;\napp.listen(PORT, ()=>{ console.log('Server listening on '+ PORT)})", (err)=>{
     if(err) throw err;
     // logs if successful
     console.log("index.js created");
@@ -27,7 +27,7 @@ exports.createServerFile = ()=>{
 // makes readme file
 exports.makeReadMe = ()=>{
   // because second parameter is blank file is created and left blank
-  fs.writeFile("README.md", "", (err)=>{
+  fs.writeFile("README.md", "## Created with Node-Bare-Skeleton\n", (err)=>{
     if(err) throw err;
     // logs if successful
     console.log("README.md created");
