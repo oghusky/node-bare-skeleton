@@ -17,7 +17,7 @@ exports.makeGitIgnore = ()=>{
 
 exports.createServerFile = ()=>{
   // writes server js file to root folder
-  fs.writeFile("index.js","require('dotenv').config();\nconst express = require('express');\nconst app = express();app.use(express.urlencoded({extended: true}));\napp.use(express.json());\napp.use(express.static(path.join(__dirname, 'public')));\nconst PORT = process.env.PORT || PORT;\napp.listen(PORT, ()=>{ console.log('Server listening on '+ PORT)})", (err)=>{
+  fs.writeFile("index.js","require('dotenv').config();\nconst express = require('express');\nconst app = express();\nconst path = require('path');\napp.use(express.urlencoded({extended: true}));\napp.use(express.json());\napp.use(express.static(path.join(__dirname, 'public')));\nconst PORT = process.env.PORT || 5000;\napp.listen(PORT, ()=>{ console.log('Server listening on '+ PORT)})", (err)=>{
     if(err) throw err;
     // logs if successful
     console.log("index.js created");
