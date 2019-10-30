@@ -1,4 +1,5 @@
 const fs = require("fs");
+const config = require("./config.js")
 
 // takes in cb and creates a folder with argument name
 exports.mkdirFolder=(foldername, cb)=>{
@@ -8,7 +9,7 @@ exports.mkdirFolder=(foldername, cb)=>{
 // function to create gitignore file
 exports.makeGitIgnore = ()=>{
   // writes to file what it shoud ignore once file is created
-  fs.writeFile(".gitignore", "node_modules/\npackage-lock.json", (err)=>{
+  fs.writeFile(".gitignore", fs.readFileSync(config.GIT_IGNORE_TEMPLATE_PATH), (err)=>{
     if(err) throw err;
     // logs if sucessfull
     console.log(".gitignore created");
@@ -17,7 +18,7 @@ exports.makeGitIgnore = ()=>{
 
 exports.createServerFile = ()=>{
   // writes server js file to root folder
-  fs.writeFile("index.js","require('dotenv').config();\nconst express = require('express');\nconst app = express();\nconst path = require('path');\napp.use(express.urlencoded({extended: true}));\napp.use(express.json());\napp.use(express.static(path.join(__dirname, 'public')));\nconst PORT = process.env.PORT || 5000;\napp.listen(PORT, ()=>{ console.log('Server listening on '+ PORT)})", (err)=>{
+  fs.writeFile("index.js", fs.readFileSync(config.GIT_IGNORE_TEMPLATE_PATH), (err)=>{
     if(err) throw err;
     // logs if successful
     console.log("index.js created");

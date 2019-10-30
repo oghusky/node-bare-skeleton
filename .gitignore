@@ -1,1 +1,3 @@
-node_molecules/
+node_modules
+.history
+.vscode
