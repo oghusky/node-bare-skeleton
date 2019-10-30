@@ -1,6 +1,9 @@
 #!/usr/bin/env node
+
 // import functions from index file
 const {scaffoldFolder, mkdirFolder, makeGitIgnore, makeReadMe, createServerFile} = require("./index");
+
+console.log("[+] Node-Bare-Skeleton started !");
 
 // make new folders
 mkdirFolder("models",scaffoldFolder);
@@ -14,3 +17,5 @@ makeGitIgnore();
 makeReadMe();
 // creates server file in root folder
 createServerFile();
+
+console.log("[+] Node-Bare-Skeleton ended creating your project !");

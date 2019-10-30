@@ -12,7 +12,7 @@ exports.makeGitIgnore = ()=>{
   fs.writeFile(".gitignore", fs.readFileSync(config.GIT_IGNORE_TEMPLATE_PATH), (err)=>{
     if(err) throw err;
     // logs if sucessfull
-    console.log(".gitignore created");
+    console.log("[+] .gitignore created");
   });
 }
 
@@ -21,7 +21,7 @@ exports.createServerFile = ()=>{
   fs.writeFile("index.js", fs.readFileSync(config.INDEX_JS_TEMPLATE_PATH), (err)=>{
     if(err) throw err;
     // logs if successful
-    console.log("index.js created");
+    console.log("[+] index.js created");
   })
 }
 
@@ -31,7 +31,7 @@ exports.makeReadMe = ()=>{
   fs.writeFile("README.md", fs.readFileSync(config.README_TEMPLATE_PATH), (err)=>{
     if(err) throw err;
     // logs if successful
-    console.log("README.md created");
+    console.log("[+] README.md created");
   })
 }
 
@@ -46,7 +46,7 @@ exports.scaffoldFolder=(foldername)=>{
     fs.writeFile(`${foldername}/index.js`, "", (err)=>{
       if(err) throw err;
       // logs if successful
-      console.log(`${foldername}/index.js created`);
+      console.log(`[+] ${foldername}/index.js created`);
     });
   });
 }
