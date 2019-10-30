@@ -18,7 +18,7 @@ exports.makeGitIgnore = ()=>{
 
 exports.createServerFile = ()=>{
   // writes server js file to root folder
-  fs.writeFile("index.js", fs.readFileSync(config.GIT_IGNORE_TEMPLATE_PATH), (err)=>{
+  fs.writeFile("index.js", fs.readFileSync(config.INDEX_JS_TEMPLATE_PATH), (err)=>{
     if(err) throw err;
     // logs if successful
     console.log("index.js created");
@@ -28,7 +28,7 @@ exports.createServerFile = ()=>{
 // makes readme file
 exports.makeReadMe = ()=>{
   // because second parameter is blank file is created and left blank
-  fs.writeFile("README.md", "## Created with Node-Bare-Skeleton\n", (err)=>{
+  fs.writeFile("README.md", fs.readFileSync(config.README_TEMPLATE_PATH), (err)=>{
     if(err) throw err;
     // logs if successful
     console.log("README.md created");

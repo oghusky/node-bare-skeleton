@@ -3,10 +3,9 @@
  * A list of all global variable around the package
  */
 
-exports.GIT_IGNORE_PATH = "./templates/.gitignore_template";
+// Global config variables
+exports.GIT_IGNORE_TEMPLATE_PATH = "./templates/.template_gitignore";
 
-exports.GIT_IGNORE_PATH = "./templates/.gitignore_template";
+exports.INDEX_JS_TEMPLATE_PATH = "./templates/template_index.js";
 
-exports.GIT_IGNORE_PATH = "./templates/.gitignore_template";
-
-exports.GIT_IGNORE_PATH = "./templates/.gitignore_template";
+exports.README_TEMPLATE_PATH = "./templates/template_README.md";
