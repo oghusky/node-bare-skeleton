@@ -1,5 +1,10 @@
 const fs = require("fs");
-const config = require("./config.js")
+
+const config = require("./config.js");
+
+const lang = require("./lang.js");
+
+const LOG_LANG = config.LOG_LANG;
 
 // takes in cb and creates a folder with argument name
 exports.mkdirFolder=(foldername, cb)=>{
@@ -12,7 +17,7 @@ exports.makeGitIgnore = ()=>{
   fs.writeFile(".gitignore", fs.readFileSync(config.GIT_IGNORE_TEMPLATE_PATH), (err)=>{
     if(err) throw err;
     // logs if sucessfull
-    console.log("[+] .gitignore created");
+    console.log(`[+] .gitignore ${lang.LANG[LOG_LANG].CREATED}`);
   });
 }
 
@@ -21,7 +26,7 @@ exports.createServerFile = ()=>{
   fs.writeFile("index.js", fs.readFileSync(config.INDEX_JS_TEMPLATE_PATH), (err)=>{
     if(err) throw err;
     // logs if successful
-    console.log("[+] index.js created");
+    console.log(`[+] index.js ${lang.LANG[LOG_LANG].CREATED}`);
   })
 }
 
@@ -31,7 +36,7 @@ exports.makeReadMe = ()=>{
   fs.writeFile("README.md", fs.readFileSync(config.README_TEMPLATE_PATH), (err)=>{
     if(err) throw err;
     // logs if successful
-    console.log("[+] README.md created");
+    console.log(`[+] README.md ${lang.LANG[LOG_LANG].CREATED}`);
   })
 }
 
@@ -41,12 +46,12 @@ exports.scaffoldFolder=(foldername)=>{
   return fs.mkdir(`${foldername}`, {recursive:false}, (err)=>{
     if(err) throw err;
     // logs if successful
-    console.log(`${foldername} has been created`);
+    console.log(`${foldername} ${lang.LANG[LOG_LANG].CREATED}`);
     // if folder is created successfully this creates the blank index file inside of it
     fs.writeFile(`${foldername}/index.js`, "", (err)=>{
       if(err) throw err;
       // logs if successful
-      console.log(`[+] ${foldername}/index.js created`);
+      console.log(`[+] ${foldername}/index.js ${lang.LANG[LOG_LANG].CREATED}`);
     });
   });
 }

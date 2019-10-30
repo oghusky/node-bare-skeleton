@@ -2,8 +2,11 @@
 
 // import functions from index file
 const {scaffoldFolder, mkdirFolder, makeGitIgnore, makeReadMe, createServerFile} = require("./index");
+const config = require("./config.js");
+const lang = require("./lang.js");
+const LOG_LANG = config.LOG_LANG;
 
-console.log("[+] Node-Bare-Skeleton started !");
+console.log(`${lang.LANG[LOG_LANG].FIRST_LOG}`);
 
 // make new folders
 mkdirFolder("models",scaffoldFolder);
@@ -18,4 +21,4 @@ makeReadMe();
 // creates server file in root folder
 createServerFile();
 
-console.log("[+] Node-Bare-Skeleton ended creating your project !");
+console.log(`${lang.LANG[LOG_LANG].LAST_LOG}`);

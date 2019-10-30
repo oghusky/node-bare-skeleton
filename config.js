@@ -4,6 +4,8 @@
  */
 
 // Global config variables
+exports.LOG_LANG = "en";
+
 exports.GIT_IGNORE_TEMPLATE_PATH = "./templates/.template_gitignore";
 
 exports.INDEX_JS_TEMPLATE_PATH = "./templates/template_index.js";
