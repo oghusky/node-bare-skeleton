@@ -1,10 +1,7 @@
 #!/usr/bin/env node
 
 // import functions from index file
-const {scaffoldFolder, mkdirFolder, makeGitIgnore, makeReadMe, createServerFile} = require("./index");
-const config = require("./config.js");
-const lang = require("./lang.js");
-const LOG_LANG = config.LOG_LANG;
+const {scaffoldFolder, mkdirFolder, makeFile, config, lang, LOG_LANG} = require("./index");
 
 console.log(`${lang.LANG[LOG_LANG].FIRST_LOG}`);
 
@@ -14,11 +11,12 @@ mkdirFolder("controllers",scaffoldFolder);
 mkdirFolder("routes",scaffoldFolder);
 mkdirFolder("middleware",scaffoldFolder);
 mkdirFolder("public", scaffoldFolder);
+
 // make gitignore file
-makeGitIgnore();
+makeFile(".gitignore", config.GIT_IGNORE_TEMPLATE_PATH)
 // make readme file
-makeReadMe();
+makeFile("README.md", config.README_TEMPLATE_PATH)
 // creates server file in root folder
-createServerFile();
+makeFile("index.js", config.INDEX_JS_TEMPLATE_PATH)
 
 console.log(`${lang.LANG[LOG_LANG].LAST_LOG}`);
