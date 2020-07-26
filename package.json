@@ -1,9 +1,9 @@
 {
   "name": "node-bare-skeleton",
   "version": "2.1.1",
-  "description": "",
+  "description": "creates bare node server skeleton",
   "main": "index.js",
-  "author": "",
+  "author": "Philip Simmons",
   "license": "ISC",
   "bin": "cli.js",
   "scripts": {

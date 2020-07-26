@@ -8,20 +8,50 @@ exports.mkdirFolder = (foldername, cb) => {
 // function to create gitignore file
 exports.makeGitIgnore = () => {
   // writes to file what it shoud ignore once file is created
-  fs.writeFile(".gitignore", "node_modules/\npackage-lock.json", (err) => {
+  fs.writeFile(".gitignore", `
+  node_modules/
+  \npackage-lock.json`, (err) => {
     if (err) throw err;
     // logs if sucessfull
     console.log(".gitignore created");
   });
 }
 
+// create package.json file
+exports.makePackageJson = () => {
+  fs.writeFile("package.json", `
+    {
+  "name": "${process.env.PWD.split("/")[process.env.PWD.split("/").length - 1]}",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "ISC",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
+  `, (err) => {
+    if (err) throw err;
+    console.log("package.json cretead");
+  })
+}
+
 exports.createServerFile = () => {
   // writes server js file to root folder
-  fs.writeFile("index.js", "require('dotenv').config();\nconst express = require('express');\nconst app = express();\nconst path = require('path');\napp.use(express.urlencoded({extended: true}));\napp.use(express.json());\napp.use(express.static(path.join(__dirname, 'public')));\nconst PORT = process.env.PORT || 5000;\napp.listen(PORT, ()=>{ console.log('Server listening on '+ PORT)})", (err) => {
-    if (err) throw err;
-    // logs if successful
-    console.log("index.js created");
-  })
+  fs.writeFile("index.js", `
+  require('dotenv').config();
+  \nconst express = require('express');
+  \nconst app = express();
+  \nconst path = require('path');
+  \napp.use(express.urlencoded({extended: true}));
+  \napp.use(express.json());
+  \napp.use(express.static(path.join(__dirname, 'public')));
+  \nconst PORT = process.env.PORT || 5000;
+  \napp.listen(PORT, ()=>{ console.log('Server listening on '+ PORT)})`,
+    (err) => {
+      if (err) throw err;
+      // logs if successful
+      console.log("index.js created");
+    })
 }
 
 // makes readme file
