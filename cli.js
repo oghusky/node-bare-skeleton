@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 // import functions from index file
-const {scaffoldFolder, mkdirFolder, makeGitIgnore, makeReadMe, createServerFile} = require("./index");
+const { scaffoldFolder, mkdirFolder, makeGitIgnore, makeReadMe, makePackageJson, createServerFile } = require("./index");
 
 // make new folders
-mkdirFolder("models",scaffoldFolder);
-mkdirFolder("controllers",scaffoldFolder);
-mkdirFolder("routes",scaffoldFolder);
-mkdirFolder("middleware",scaffoldFolder);
+mkdirFolder("models", scaffoldFolder);
+mkdirFolder("controllers", scaffoldFolder);
+mkdirFolder("routes", scaffoldFolder);
+mkdirFolder("middleware", scaffoldFolder);
 mkdirFolder("public", scaffoldFolder);
 // make gitignore file
 makeGitIgnore();
@@ -14,3 +14,5 @@ makeGitIgnore();
 makeReadMe();
 // creates server file in root folder
 createServerFile();
+// creates package.json
+makePackageJson();
